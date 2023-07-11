@@ -1,5 +1,4 @@
 package Controller.ScreenDetection.ImgToTxt;
-import Controller.ScreenDetection.Screenshot;
 
 import java.io.PrintWriter;
 
