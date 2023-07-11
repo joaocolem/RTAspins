@@ -4,10 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashSet;
+
 
 
 public class VerifyActions {
@@ -52,20 +49,5 @@ public class VerifyActions {
     }
 
 
-    // Exemplo de uso
-    public static void main(String[] args) {
-        // Carrega a imagem (substitua o caminho pelo caminho real da imagem no seu sistema)
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(new File("C:\\imge\\testeacy.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        // Cria uma instância da classe
-        
-        // Verifica as cores na imagem e retorna a ordem
-        String colorOrder = checkPixelColors(image);
-        System.out.println("Ordem das cores encontradas: " + colorOrder);
-    }
+
 }

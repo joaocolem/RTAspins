@@ -1,4 +1,4 @@
-package test.ControllerTest.ScreenDetectionTest.ImageVerificationsTest.CardsTest.Actions;
+package test.ControllerTest.ScreenDetectionTest.ImageVerificationsTest.Actions;
 
 import Controller.ScreenDetection.ImageVerifications.Actions.*;
 
