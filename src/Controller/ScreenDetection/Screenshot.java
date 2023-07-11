@@ -12,6 +12,8 @@ public class Screenshot {
 
     
     public static void captureScreenshot(int x, int y, int width, int height, String filePath) {
+
+        System.out.println("entrou");
         try {
             Robot robot = new Robot();
             Rectangle area = new Rectangle(x, y, width, height);
@@ -21,4 +23,6 @@ public class Screenshot {
             e.printStackTrace();
         }
     }
+
+
 }
