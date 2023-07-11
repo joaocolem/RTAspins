@@ -1,28 +1,26 @@
 package Controller.ScreenDetection;
-import java.awt.AWTException;
+
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 
 public class Screenshot {
 
     
-    public static void captureScreenshot(int x, int y, int width, int height, String filePath) {
-
-        System.out.println("entrou");
+    public static BufferedImage captureScreenshot(int x, int y, int width, int height) {
+        BufferedImage screenshot;
         try {
             Robot robot = new Robot();
             Rectangle area = new Rectangle(x, y, width, height);
-            BufferedImage screenshot = robot.createScreenCapture(area);
-            ImageIO.write(screenshot, "png", new File(filePath));
-        } catch (AWTException | IOException e) {
+            screenshot = robot.createScreenCapture(area);
+            return screenshot;
+        } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
+    
 
 
 }

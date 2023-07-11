@@ -1,4 +1,4 @@
-package test.ControllerTest.ScreenDetectionTest;
+package test.ControllerTest.ScreenDetectionTest.ImgToTxtTest;
 
 import static org.junit.Assert.assertEquals;
 
