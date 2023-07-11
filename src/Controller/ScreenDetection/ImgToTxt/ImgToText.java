@@ -7,10 +7,9 @@ public class ImgToText {
     
     final static String tesseractInstallPath="C:\\Program Files (x86)\\Tesseract-OCR\\tesseract";
 
-    public static String main(String[] args) {
+    public static String ImgToText(String inputFile) {
         
-        Screenshot.captureScreenshot(380, 420, 72, 23, "C:\\imge\\screen4.png");
-        String input_file="C:\\imge\\screen4.png";
+
         String outputFile="C:\\imge\\teste";
         String[] command =
         {
@@ -22,7 +21,7 @@ public class ImgToText {
             new Thread(new SyncPipe(p.getErrorStream(), System.err)).start();
             new Thread(new SyncPipe(p.getInputStream(), System.out)).start();
             PrintWriter stdin = new PrintWriter(p.getOutputStream());
-            stdin.println("\""+tesseractInstallPath+"\" \""+input_file+"\" \""+outputFile+"\" -l eng");
+            stdin.println("\""+tesseractInstallPath+"\" \""+inputFile+"\" \""+outputFile+"\" -l eng");
             stdin.close();
             p.waitFor();
             return("");
@@ -33,4 +32,7 @@ public class ImgToText {
 
         return(ReadFile.read_a_file(outputFile+".txt"));
     }
+
+    
+
     }
