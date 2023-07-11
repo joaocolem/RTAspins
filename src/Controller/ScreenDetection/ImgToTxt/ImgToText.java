@@ -7,7 +7,7 @@ public class ImgToText {
     
     final static String tesseractInstallPath="C:\\Program Files (x86)\\Tesseract-OCR\\tesseract";
 
-    public static String ImgToText(String inputFile) {
+    public static String imgToText(String inputFile) {
         
 
         String outputFile="C:\\imge\\teste";
@@ -24,7 +24,6 @@ public class ImgToText {
             stdin.println("\""+tesseractInstallPath+"\" \""+inputFile+"\" \""+outputFile+"\" -l eng");
             stdin.close();
             p.waitFor();
-            return("");
 
         } catch (Exception e) {
         e.printStackTrace();
@@ -32,7 +31,4 @@ public class ImgToText {
 
         return(ReadFile.read_a_file(outputFile+".txt"));
     }
-
-    
-
-    }
+}
