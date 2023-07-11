@@ -51,6 +51,11 @@ public class VerifyCard {
         }
     }
 
+    
+    /** 
+     * @param color
+     * @return boolean
+     */
     private boolean isWhite(Color color) {
         return color.getRed() == 255 && color.getGreen() == 255 && color.getBlue() == 255;
     }
@@ -89,10 +94,92 @@ public class VerifyCard {
         }
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean hasMoreWhitePixelsThanHalf() {
         int totalPixels = image.getWidth() * image.getHeight();
         int whitePixels = totalPixels - nonWhitePixels;
         return whitePixels > totalPixels / 3;
     }
+
+    /**
+     * @return BufferedImage return the image
+     */
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }
+
+    /**
+     * @param nonWhitePixels the nonWhitePixels to set
+     */
+    public void setNonWhitePixels(int nonWhitePixels) {
+        this.nonWhitePixels = nonWhitePixels;
+    }
+
+    /**
+     * @return int return the redPixels
+     */
+    public int getRedPixels() {
+        return redPixels;
+    }
+
+    /**
+     * @param redPixels the redPixels to set
+     */
+    public void setRedPixels(int redPixels) {
+        this.redPixels = redPixels;
+    }
+
+    /**
+     * @return int return the bluePixels
+     */
+    public int getBluePixels() {
+        return bluePixels;
+    }
+
+    /**
+     * @param bluePixels the bluePixels to set
+     */
+    public void setBluePixels(int bluePixels) {
+        this.bluePixels = bluePixels;
+    }
+
+    /**
+     * @return int return the blackPixels
+     */
+    public int getBlackPixels() {
+        return blackPixels;
+    }
+
+    /**
+     * @param blackPixels the blackPixels to set
+     */
+    public void setBlackPixels(int blackPixels) {
+        this.blackPixels = blackPixels;
+    }
+
+    /**
+     * @return int return the greenPixels
+     */
+    public int getGreenPixels() {
+        return greenPixels;
+    }
+
+    /**
+     * @param greenPixels the greenPixels to set
+     */
+    public void setGreenPixels(int greenPixels) {
+        this.greenPixels = greenPixels;
+    }
+
 }
 
