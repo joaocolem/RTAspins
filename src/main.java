@@ -1,6 +1,7 @@
 
 import Controller.ScreenDetection.ImageProcessor;
 import Controller.ScreenDetection.Screenshot;
+import Controller.ScreenDetection.ImageVerifications.Actions.VerifyActions;
 import Controller.ScreenDetection.ImgToTxt.ImgToText;
 
 import java.awt.image.BufferedImage;
@@ -50,8 +51,10 @@ public class main {
         saveImage(actionHero, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\actionHero.png");
         saveImage(actionV2, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\actionV2.png");
         
+        System.out.println(VerifyActions.checkPixelColors(actionHero));
+        System.out.println(VerifyActions.checkPixelColors(actionV2));
+        System.out.println(VerifyActions.checkPixelColors(actionV1));
 
-        
 
 
 
