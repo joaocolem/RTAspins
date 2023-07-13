@@ -8,7 +8,7 @@ public class CardTest {
 
     @Test
     public void testCardCreation() {
-        Card card = new Card(95, "s");
+        Card card = new Card(136, "s");
         Assert.assertEquals("As", card.toString());
     }
 

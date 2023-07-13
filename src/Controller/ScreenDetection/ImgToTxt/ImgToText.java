@@ -1,5 +1,6 @@
 package Controller.ScreenDetection.ImgToTxt;
 
+
 import java.io.PrintWriter;
 
 public class ImgToText {
@@ -30,4 +31,7 @@ public class ImgToText {
 
         return(ReadFile.read_a_file(outputFile+".txt"));
     }
+
+
+
 }

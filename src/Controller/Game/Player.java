@@ -91,4 +91,10 @@ public class Player {
         this.mao = mao;
     }
 
+
+    @Override
+    public String toString() {
+        return "Player{" + "stack=" + stack + ", position=" + position + ", action=" + action + ", mao=" + mao + '}';
+    }
+
 }

@@ -14,11 +14,8 @@ public class VerifyCard {
 
     public VerifyCard(BufferedImage image) {
         this.image = image;
-        this.nonWhitePixels = 0;
-        this.redPixels = 0;
-        this.bluePixels = 0;
-        this.blackPixels = 0;
-        this.greenPixels = 0;
+        this.analyze();
+
     }
 
     public void analyze() {

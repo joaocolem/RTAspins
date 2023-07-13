@@ -36,7 +36,6 @@ public class VerifyCardTest {
     @Test
     public void testAnalyze() {
         VerifyCard verifyCard = new VerifyCard(image);
-        verifyCard.analyze();
 
         // Verificar os valores esperados após a análise
         assertEquals(60, verifyCard.getNonWhitePixels());
@@ -81,7 +80,6 @@ public class VerifyCardTest {
         }
 
         VerifyCard verifyCard = new VerifyCard(image);
-        verifyCard.analyze();
         boolean hasMoreWhitePixels = verifyCard.hasMoreWhitePixelsThanHalf();
 
         // Verificar o valor esperado para o caso de teste específico
