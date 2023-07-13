@@ -3,17 +3,28 @@ package Controller.Game;
 public class Player {
     private int stack;
     private int position;
-    private String[] action;
+    private int bigBlind;
+    private String action;
     private String mao;
 
-    public Player(int stack, int position, String[] action, String[] cartas) {
+
+    public Player(int stack, int position, String action, String[] cartas, int bigBlind) {
+        this.bigBlind = bigBlind;
         this.stack = stack;
         this.position = position;
         this.action = action;
         this.mao = gerarMao(cartas);
     }
 
-    
+    public void stackPlusAction(){
+        if(action.contains("R")) this.stack =+ (2*bigBlind);
+        if(action.contains("L")) this.stack =+ bigBlind;
+        if(action.contains("C")) this.stack =+ (2*bigBlind);
+    }
+
+    public void stackInBB(){
+        this.stack = this.stack/bigBlind;
+    }
 
     public String gerarMao(String[] cartas) {
         if (cartas.length != 2) {
@@ -68,14 +79,14 @@ public class Player {
     /**
      * @return String[] return the action
      */
-    public String[] getAction() {
+    public String getAction() {
         return action;
     }
 
     /**
      * @param action the action to set
      */
-    public void setAction(String[] action) {
+    public void setAction(String action) {
         this.action = action;
     }
 
@@ -97,6 +108,21 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" + "stack=" + stack + ", position=" + position + ", action=" + action + ", mao=" + mao + '}';
+    }
+
+
+    /**
+     * @return int return the bigBlind
+     */
+    public int getBigBlind() {
+        return bigBlind;
+    }
+
+    /**
+     * @param bigBlind the bigBlind to set
+     */
+    public void setBigBlind(int bigBlind) {
+        this.bigBlind = bigBlind;
     }
 
 }

@@ -27,7 +27,9 @@ public class main {
         //actionV1: 10, 255, 200, 50
         //actionHero: 10, 310, 200, 30
         //actionV2: 10, 358, 200, 30
-
+        //blind: 
+        
+        int bigBlind = 30;
 
         BufferedImage tableImage = Screenshot.captureScreenshot(0, 0, width, height);
 
@@ -41,7 +43,10 @@ public class main {
         BufferedImage ImageActionV1 = ImageProcessor.getSubImage(tableImage, 10, 258, 200, 30);
         BufferedImage ImageActionHero = ImageProcessor.getSubImage(tableImage, 10, 310, 200, 30);
         BufferedImage ImageActionV2 = ImageProcessor.getSubImage(tableImage, 10, 358, 200, 30);
-        
+        BufferedImage ImageBlind= ImageProcessor.getSubImage(tableImage, 25, 10, 200, 15);
+
+
+
         // Salvar as imagens em arquivos
         saveImage(ImageCard1, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\carta1.png");
         saveImage(ImageCard2, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\carta2.png");
@@ -53,12 +58,13 @@ public class main {
         saveImage(ImageActionV2, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\actionV1.png");
         saveImage(ImageActionHero, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\actionHero.png");
         saveImage(ImageActionV2, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\actionV2.png");
+        saveImage(ImageBlind, "C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\blind.png");
         
         System.out.println(VerifyActions.checkPixelColors(ImageActionHero));
         System.out.println(VerifyActions.checkPixelColors(ImageActionV1));
         System.out.println(VerifyActions.checkPixelColors(ImageActionV2));
         
-    
+        
         VerifyCard verifyCard = new VerifyCard(ImageCard1);
         VerifyCard verifyCard2 = new VerifyCard(ImageCard2);
         Card card1 = new Card(verifyCard.getNonWhitePixels(), verifyCard.getPredominantColor());
@@ -66,7 +72,7 @@ public class main {
         Card card2 = new Card(verifyCard2.getNonWhitePixels(), verifyCard2.getPredominantColor());
         System.out.println(card2.toString());
         String [] cards = {card1.toString(), card2.toString()};
-        Player hero = new Player(100, 1, null, cards);
+        Player hero = new Player(100, 1, null, cards,bigBlind);
         System.out.println(hero.toString());
 
         VerifyCard verifyQuant = new VerifyCard(ImageVerQuant);
@@ -77,24 +83,21 @@ public class main {
         String stringStackV1 = ImgToText.imgToText("C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\stackV1.png");
         String stringStackV2 = ImgToText.imgToText("C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\stackV2.png");
         
+        String stringBigBlind = ImgToText.imgToText("C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\blind.png");
+        
         System.out.print("\033[H\033[2J");
         System.out.flush();
-
 
         System.out.println("STRING---:" + stringStackV1);
         int stackHero = convertStringToInt(stringStackHero);
         int stackV1 = convertStringToInt(stringStackV1);
         int stackV2 = convertStringToInt(stringStackV2);
 
-        //if(100<=stackV1 && stackV1<175){
-        //   stackV1 +=100;
-        //}
-
-
-
         System.out.println("STACK-------"+ stackHero);
         System.out.println("STACK-------"+ stackV1);
         System.out.println("STACK-------"+ stackV2);
+
+        System.out.println(stringBigBlind);
 
     }
 
