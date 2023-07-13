@@ -13,6 +13,8 @@ public class Player {
         this.mao = gerarMao(cartas);
     }
 
+    
+
     public String gerarMao(String[] cartas) {
         if (cartas.length != 2) {
             return "";

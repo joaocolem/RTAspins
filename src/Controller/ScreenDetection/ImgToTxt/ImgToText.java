@@ -28,7 +28,7 @@ public class ImgToText {
         } catch (Exception e) {
         e.printStackTrace();
         }
-
+        
         return(ReadFile.read_a_file(outputFile+".txt"));
     }
 

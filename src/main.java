@@ -73,9 +73,28 @@ public class main {
         boolean isHeadsUp = verifyQuant.hasMoreWhitePixelsThanHalf();
         System.out.println(isHeadsUp);
 
-
+        String stringStackHero = ImgToText.imgToText("C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\stackHero.png");
+        String stringStackV1 = ImgToText.imgToText("C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\stackV1.png");
+        String stringStackV2 = ImgToText.imgToText("C:\\Users\\joao_\\Documents\\GitHub\\RTAspins\\src\\ImageFiles\\stackV2.png");
         
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
+
+        System.out.println("STRING---:" + stringStackV1);
+        int stackHero = convertStringToInt(stringStackHero);
+        int stackV1 = convertStringToInt(stringStackV1);
+        int stackV2 = convertStringToInt(stringStackV2);
+
+        //if(100<=stackV1 && stackV1<175){
+        //   stackV1 +=100;
+        //}
+
+
+
+        System.out.println("STACK-------"+ stackHero);
+        System.out.println("STACK-------"+ stackV1);
+        System.out.println("STACK-------"+ stackV2);
 
     }
 
@@ -90,4 +109,21 @@ public class main {
     }
 
 
+
+    public static int convertStringToInt(String input) {
+        if(input.equals(""))return 0;
+        if(input.contains("I")){
+           String replacedString = input.replace("I", "1");
+           return Integer.parseInt(replacedString);
+        }
+        String replacedString = input.replace("!]", "0");
+        int intValue = Integer.parseInt(replacedString);
+        
+        if(100<=intValue && intValue<175){
+           intValue +=100;
+        }
+        return intValue;
+
+
+    }
 }
